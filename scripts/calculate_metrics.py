@@ -10,6 +10,11 @@ import numpy as np
 import pandas as pd
 from argparse import ArgumentParser
 
+"""
+Run it like this:
+python -u calculate_metrics.py --state NC
+"""
+
 #### copy pasted and modified from https://gerrychain.readthedocs.io/en/latest/_modules/gerrychain/metrics/partisan.html?highlight=gerrychain.metrics.partisan
 def mean_median(election_results, first_party):
     """

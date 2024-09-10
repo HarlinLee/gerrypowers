@@ -7,6 +7,16 @@ from gerrychain import (GeographicPartition, Graph)
 import utils
 from argparse import ArgumentParser
 
+"""
+Run it like this:
+
+# plot a random map
+python -u plot_maps.py --fn 'biased_chains/NC/hill_PRES16_Republican_mean_median_50000_1719990529.pkl' 
+
+# plot specific maps
+python -u plot_maps.py --fn 'biased_chains/NC/shortburst_PRES16_Republican_mean_median_10000_1719427359.pkl' --i 1,100,400
+"""
+
 def main(args):
     fname = args.fn
     state = fname.split('/')[-2]

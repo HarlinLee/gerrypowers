@@ -11,6 +11,11 @@ import utils
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+Run it like this:
+python -u make_shortburst_biased_chain.py --party Republican --election PRES16 --bias mean_median --n 10000 --sb 5 --state NC
+"""
+
 def main(args):
     party_to_favor = args.party
     election_name = args.election

@@ -4,6 +4,8 @@ Work by Ranthony A. Clark, Susan Glenn, Harlin Lee, and Soledad Villar.
 
 We generate biased MCMC chains using hill climbing[^fn1] and short burst[^fn2], then run an emprirical power analysis of the outlier test in Theorem 3.1 (Chikina, Frieze, Mattingly & Pegden)[^fn3].
 
+Data is from [https://github.com/mggg-states/NC-shapefiles](https://github.com/mggg-states/NC-shapefiles).
+
 ## Software
 
 ```python

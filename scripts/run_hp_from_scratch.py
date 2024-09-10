@@ -7,6 +7,12 @@ from gerrychain import (GeographicPartition, Graph, MarkovChain,
 from gerrychain.proposals import reversible_recom, propose_chunk_flip, propose_random_flip
 import utils
 
+"""
+Run it like this:
+
+python -u ./run_hp_from_scratch.py --k 200000 --m 32 --map random --fn unbiased_chains/NC/unbiased_PRES16_50000.pkl --proposal random
+"""
+
 def main(args):
     map_of_choice = args.map
     prop = args.proposal

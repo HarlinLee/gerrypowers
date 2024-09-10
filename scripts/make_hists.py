@@ -7,6 +7,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
+"""
+Run it like this:
+python -u make_hists.py --state NC --s 50
+"""
+
 def get_metrics_files(args):
     party, folder, ufolder, prefix, election, metric1 = args['party'], args['folder'], args['ufolder'], args['prefix'], args['election'], args['metric1']
 

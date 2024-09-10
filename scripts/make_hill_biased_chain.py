@@ -12,6 +12,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from biased_accept import get_biased_accept
 
+"""
+Run it like this:
+python -u make_hill_biased_chain.py --party Democratic --election PRES12 --bias mean_median --n 50000  --state NC --diversity 1
+"""
+
 def main(args):
     party_to_favor = args.party
     election_name = args.election

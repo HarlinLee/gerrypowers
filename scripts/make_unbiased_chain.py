@@ -8,6 +8,11 @@ from gerrychain.meta.diversity import collect_diversity_stats
 from gerrychain.tree import bipartition_tree
 import utils
 
+"""
+Run it like this:
+python make_unbiased_chain.py --election PRES16 --state NC
+"""
+
 def main(args):
     election_name = args.election
     state = args.state

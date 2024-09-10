@@ -5,6 +5,16 @@ import glob
 import csv
 from argparse import ArgumentParser
 
+"""
+Run it like this:
+
+python -u read_hp_results.py --k 1000 --a 0.05 --e 0.01,0.005,0.003,0.001 --fn "hp/unbiased_chains/NC/unbiased_PRES12*.pkl"
+
+python -u read_hp_results.py --k 1000 --a 0.05 --e 0.01,0.005,0.003,0.001 --fn "hp/biased_chains/NC/shortburst_PRES12_Democratic_efficiency_gap*.pkl"
+
+python -u read_hp_results.py --k 1000 --a 0.05 --e 0.01,0.005,0.003,0.001 --fn "hp/biased_chains/NC/shortburst_PRES12_Republican_efficiency_gap*.pkl"
+"""
+
 def test_hypothesis(w_vals, epsilon, alpha, verbose=True, k=None):
     m = w_vals.shape[0]
 
