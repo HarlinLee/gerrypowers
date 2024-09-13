@@ -8,6 +8,10 @@ We generate biased MCMC chains using hill climbing[^fn1] and short burst[^fn2], 
 
 Data is from [https://github.com/mggg-states/NC-shapefiles](https://github.com/mggg-states/NC-shapefiles).
 
+# Power analysis
+The R script `power_analysis.R` analyzes the summary file `df_power_total.csv` and produces figures in `plots/power_analysis`.
+
+# Generating biased ensembles
 ## Software
 
 ```python
