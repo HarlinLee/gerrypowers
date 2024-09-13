@@ -3,10 +3,6 @@ library(ggplot2)
 library(tidyverse)
 library(lmerTest)
 
-#library(drc)
-#library(nlme)
-#library(aomisc)
-
 # k
 df <- read.csv("df_power_total.csv")
 df[,1:6] <- df[,1:6]/100
@@ -37,8 +33,6 @@ ggsave('plots/power_analysis/Power_EpsK.pdf', width=6, height=4, dpi=300)
 mod <- lm(Power ~ Epsilon*K, data=out)
 summary(mod)
 #no interactions between epsilon and K
-#Thank god!!!!!!
-
 
 # epsilon
 df <- read.csv("df_power_total.csv")
@@ -59,7 +53,7 @@ out <- cbind.data.frame(Power=c(dfeg$efficiency.gap, dfmm$mean.median, dfpb$part
                         index=as.factor(c(dfeg$Index, dfmm$Index, dfpb$Index, dfpg$Index, dfss$Index)),
                         Party=c(dfeg$Party, dfmm$Party, dfpb$Party, dfpg$Party, dfss$Party))
 
-df <- read.csv("/Users/harlinlee/Dropbox/gerrymandering/df_power_total.csv")
+df <- read.csv("df_power_total.csv")
 df[,1:6] <- df[,1:6]/100
 df <- subset(df, K=='200000')
 dfeg <- subset(df, Metric=="efficiency.gap")
