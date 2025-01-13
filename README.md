@@ -8,6 +8,20 @@ We generate biased MCMC chains using hill climbing[^fn1] and short burst[^fn2], 
 
 Data is from [https://github.com/mggg-states/NC-shapefiles](https://github.com/mggg-states/NC-shapefiles).
 
+If you find this code useful, please cite our paper: https://arxiv.org/abs/2501.05761.
+
+```bibtex
+@misc{clark2025empiricalpoweranalysisstatistical,
+      title={Empirical Power Analysis of a Statistical Test to Quantify Gerrymandering}, 
+      author={Ranthony A. Clark and Susan Glenn and Harlin Lee and Soledad Villar},
+      year={2025},
+      eprint={2501.05761},
+      archivePrefix={arXiv},
+      primaryClass={cs.CY},
+      url={https://arxiv.org/abs/2501.05761}, 
+}
+```
+
 # Power analysis
 The R script `power_analysis.R` analyzes the summary file `df_power_total.csv` and produces figures in `plots/power_analysis`.
 
