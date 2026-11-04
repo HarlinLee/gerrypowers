@@ -97,6 +97,14 @@ Shows up in `run_hp_from_scratch.py` and `read_hp_results.py`.
   - Note that `e` and `a` can take in multiple values separated by comma. For example, `--e 0.015,0.01,0.005,0.003,0.001,0.0005 --a 0.05`.
   - `fn` should be the filename for trajectories from `run_hp_from_scratch.py`. It can be a single pkl file, regex that matches multiple files, or a folder name. For example, `*` in `hp/biased_chains/NC/shortburst_PRES12_Republican_mean_median*.pkl` is a wildcard and can take any value. This should match 100 filenames.
 
+# Figures of the paper
+`scripts/make_paper_figures.py` draws Figures 4, 5 and 6 of the paper into `plots/paper/` from `data/figure_metrics.npz`, which holds the per-plan metrics of the chains these figures use. `scripts/extract_chain_metrics.py` builds that file from the `-metrics.pkl` files written by `calculate_metrics.py`, and prints the numbers quoted in Section 4.2.
+
+```
+python scripts/extract_chain_metrics.py --out chain_metrics.npz --figure_data data/figure_metrics.npz
+python scripts/make_paper_figures.py --data data/figure_metrics.npz --out plots/paper
+```
+
 [^fn1]: Duchin, M., Needham, T., Weighill, T. (2022). The (homological) persistence of gerrymandering. Foundations of Data Science, 2022, 4(4): 581-622. doi: 10.3934/fods.2021007
 [^fn2]: Cannon, S., Goldbloom-Helzner, A., Gupta, V. et al. (2023). Voting Rights, Markov Chains, and Optimization by Short Bursts. Methodol Comput Appl Probab 25, 36. https://doi.org/10.1007/s11009-023-09994-1
 [^fn3]: Chikina, M., Frieze, A., Mattingly, J. C., & Pegden, W. (2020). Separating Effect From Significance in Markov Chain Tests. Statistics and Public Policy, 7(1), 101–114. https://doi.org/10.1080/2330443X.2020.1806763
