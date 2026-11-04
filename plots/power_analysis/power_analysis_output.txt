@@ -1,0 +1,211 @@
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.2
+v lubridate 1.9.4     v tibble    3.3.0
+v purrr     1.1.0     v tidyr     1.3.1
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+Loading required package: lme4
+Loading required package: Matrix
+
+Attaching package: 'Matrix'
+
+The following objects are masked from 'package:tidyr':
+
+    expand, pack, unpack
+
+
+Attaching package: 'lmerTest'
+
+The following object is masked from 'package:lme4':
+
+    lmer
+
+The following object is masked from 'package:stats':
+
+    step
+
+Warning message:
+A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
+3.5.0.
+i Please use the `legend.position.inside` argument of `theme()` instead. 
+
+Call:
+lm(formula = Power ~ Epsilon * K, data = out)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.65553 -0.02067  0.01602  0.06759  0.15488 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     6.548e-01  6.439e-02  10.170 3.76e-14 ***
+Epsilon0.003   -5.188e-03  9.106e-02  -0.057    0.955    
+Epsilon0.005   -3.533e-03  9.106e-02  -0.039    0.969    
+K               7.333e-07  5.794e-07   1.266    0.211    
+Epsilon0.003:K -1.821e-07  8.194e-07  -0.222    0.825    
+Epsilon0.005:K -3.889e-07  8.194e-07  -0.475    0.637    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1492 on 54 degrees of freedom
+Multiple R-squared:  0.0625,	Adjusted R-squared:  -0.02431 
+F-statistic:  0.72 on 5 and 54 DF,  p-value: 0.6113
+
+
+Formula: Power ~ a - (a - b) * exp(-c * k)
+
+Parameters:
+   Estimate Std. Error t value Pr(>|t|)    
+a  0.735791   0.005515 133.414   <2e-16 ***
+b -1.000000  52.631995  -0.019    0.985    
+c  0.988864  30.322818   0.033    0.974    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.04053 on 57 degrees of freedom
+
+Algorithm "port", convergence message: relative convergence (4)
+
+maximal attainable power a = 0.736 ; mean power for k >= 10000 = 0.736 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: Power ~ Epsilon + (1 | index)
+   Data: out
+
+REML criterion at convergence: -124
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.5414 -0.2599 -0.0143  0.2660  2.7863 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ index    (Intercept) 0.149751 0.38698 
+ Residual             0.005651 0.07517 
+Number of obs: 108, groups:  index, 20
+
+Fixed effects:
+             Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)   0.22160    0.09013 21.97914   2.459   0.0223 *  
+Epsilon5e-05  0.17400    0.03362 81.99079   5.176 1.58e-06 ***
+Epsilon1e-04  0.23079    0.03598 82.00946   6.414 8.56e-09 ***
+Epsilon5e-04  0.26140    0.03029 82.10854   8.630 3.89e-13 ***
+Epsilon0.001  0.26640    0.03029 82.10854   8.795 1.83e-13 ***
+Epsilon0.003  0.27690    0.03029 82.10854   9.141 3.73e-14 ***
+Epsilon0.005  0.27290    0.03029 82.10854   9.009 6.83e-14 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) Ep5-05 Ep1-04 Ep5-04 E0.001 E0.003
+Epsilon5-05 -0.187                                   
+Epsilon1-04 -0.174  0.467                            
+Epsilon5-04 -0.233  0.555  0.518                     
+Epsiln0.001 -0.233  0.555  0.518  0.692              
+Epsiln0.003 -0.233  0.555  0.518  0.692  0.692       
+Epsiln0.005 -0.233  0.555  0.518  0.692  0.692  0.692
+Least Squares Means table:
+
+                             Estimate Std. Error   df t value     lower
+Epsilon9e-06 - Epsilon5e-05 -0.174000   0.033617 82.0 -5.1759 -0.240875
+Epsilon9e-06 - Epsilon1e-04 -0.230788   0.035984 82.0 -6.4137 -0.302370
+Epsilon9e-06 - Epsilon5e-04 -0.261402   0.030294 82.1 -8.6288 -0.321665
+Epsilon9e-06 - Epsilon0.001 -0.266402   0.030294 82.1 -8.7938 -0.326665
+Epsilon9e-06 - Epsilon0.003 -0.276902   0.030294 82.1 -9.1404 -0.337165
+Epsilon9e-06 - Epsilon0.005 -0.272902   0.030294 82.1 -9.0084 -0.333165
+Epsilon5e-05 - Epsilon1e-04 -0.056787   0.035984 82.0 -1.5781 -0.128370
+Epsilon5e-05 - Epsilon5e-04 -0.087402   0.030294 82.1 -2.8851 -0.147665
+Epsilon5e-05 - Epsilon0.001 -0.092402   0.030294 82.1 -3.0502 -0.152665
+Epsilon5e-05 - Epsilon0.003 -0.102902   0.030294 82.1 -3.3968 -0.163165
+Epsilon5e-05 - Epsilon0.005 -0.098902   0.030294 82.1 -3.2647 -0.159165
+Epsilon1e-04 - Epsilon5e-04 -0.030614   0.032900 82.1 -0.9305 -0.096062
+Epsilon1e-04 - Epsilon0.001 -0.035614   0.032900 82.1 -1.0825 -0.101062
+Epsilon1e-04 - Epsilon0.003 -0.046114   0.032900 82.1 -1.4016 -0.111562
+Epsilon1e-04 - Epsilon0.005 -0.042114   0.032900 82.1 -1.2801 -0.107562
+Epsilon5e-04 - Epsilon0.001 -0.005000   0.023771 82.0 -0.2103 -0.052288
+Epsilon5e-04 - Epsilon0.003 -0.015500   0.023771 82.0 -0.6521 -0.062788
+Epsilon5e-04 - Epsilon0.005 -0.011500   0.023771 82.0 -0.4838 -0.058788
+Epsilon0.001 - Epsilon0.003 -0.010500   0.023771 82.0 -0.4417 -0.057788
+Epsilon0.001 - Epsilon0.005 -0.006500   0.023771 82.0 -0.2734 -0.053788
+Epsilon0.003 - Epsilon0.005  0.004000   0.023771 82.0  0.1683 -0.043288
+                                upper  Pr(>|t|)    
+Epsilon9e-06 - Epsilon5e-05 -0.107124 1.583e-06 ***
+Epsilon9e-06 - Epsilon1e-04 -0.159205 8.558e-09 ***
+Epsilon9e-06 - Epsilon5e-04 -0.201138 3.901e-13 ***
+Epsilon9e-06 - Epsilon0.001 -0.206139 1.831e-13 ***
+Epsilon9e-06 - Epsilon0.003 -0.216639 3.737e-14 ***
+Epsilon9e-06 - Epsilon0.005 -0.212639 6.845e-14 ***
+Epsilon5e-05 - Epsilon1e-04  0.014795  0.118381    
+Epsilon5e-05 - Epsilon5e-04 -0.027138  0.004996 ** 
+Epsilon5e-05 - Epsilon0.001 -0.032139  0.003079 ** 
+Epsilon5e-05 - Epsilon0.003 -0.042639  0.001053 ** 
+Epsilon5e-05 - Epsilon0.005 -0.038638  0.001599 ** 
+Epsilon1e-04 - Epsilon5e-04  0.034833  0.354830    
+Epsilon1e-04 - Epsilon0.001  0.029833  0.282202    
+Epsilon1e-04 - Epsilon0.003  0.019333  0.164792    
+Epsilon1e-04 - Epsilon0.005  0.023333  0.204129    
+Epsilon5e-04 - Epsilon0.001  0.042288  0.833924    
+Epsilon5e-04 - Epsilon0.003  0.031788  0.516189    
+Epsilon5e-04 - Epsilon0.005  0.035788  0.629830    
+Epsilon0.001 - Epsilon0.003  0.036788  0.659858    
+Epsilon0.001 - Epsilon0.005  0.040788  0.785201    
+Epsilon0.003 - Epsilon0.005  0.051288  0.866783    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+  Confidence level: 95%
+  Degrees of freedom method: Kenward-Roger 
+           Metric Power Epsilon Year index      Party
+1  Efficiency gap  0.83   0.001   16     1 Republican
+2  Efficiency gap  0.45   0.001   12     4 Republican
+3  Efficiency gap  0.80   0.001   16    11   Democrat
+4  Efficiency gap  0.74   0.001   12    13   Democrat
+5     Mean median  0.65   0.001   16     2 Republican
+6     Mean median  0.75   0.001   12     5 Republican
+7     Mean median  0.53   0.001   16    12   Democrat
+8     Mean median  0.66   0.001   12    14   Democrat
+9   Partisan bias  0.00   0.001   16     3 Republican
+10  Partisan bias  0.01   0.001   12     6 Republican
+11  Partisan bias  0.00   0.001   12    15   Democrat
+12  Partisan bias  0.00   0.001   16    18   Democrat
+13  Partisan gini  0.98   0.001   12     7 Republican
+14  Partisan gini  0.98   0.001   16     8 Republican
+15  Partisan gini  0.96   0.001   12    16   Democrat
+16  Partisan gini  1.00   0.001   16    17   Democrat
+17     Safe seats  0.00   0.001   16     9 Republican
+18     Safe seats  0.00   0.001   12    10 Republican
+19     Safe seats  0.00   0.001   16    19   Democrat
+20     Safe seats  0.42   0.001   12    20   Democrat
+Analysis of Variance Table
+
+Response: Power
+          Df  Sum Sq Mean Sq F value    Pr(>F)    
+Metric     4 2.78797 0.69699 38.3368 4.453e-07 ***
+Party      1 0.01058 0.01058  0.5819    0.4592    
+Year       1 0.00162 0.00162  0.0891    0.7700    
+Residuals 13 0.23635 0.01818                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+# A tibble: 5 x 5
+  Metric             K Mean_Power      SE SD_between_chains
+  <chr>          <int>      <dbl>   <dbl>             <dbl>
+1 Efficiency gap     4     0.705  0.0215             0.174 
+2 Mean median        4     0.648  0.0236             0.0903
+3 Partisan bias      4     0.0025 0.00249            0.005 
+4 Partisan gini      4     0.98   0.00696            0.0163
+5 Safe seats         4     0.105  0.0123             0.21  
+# A tibble: 2 x 5
+  Year      K Mean_Power      SE SD_between_chains
+  <fct> <int>      <dbl>   <dbl>             <dbl>
+1 12       10      0.497 0.0108              0.385
+2 16       10      0.479 0.00893             0.434
+# A tibble: 2 x 5
+  Party          K Mean_Power      SE SD_between_chains
+  <chr>      <int>      <dbl>   <dbl>             <dbl>
+1 Democrat      10      0.511 0.0105              0.393
+2 Republican    10      0.465 0.00923             0.426
+`summarise()` has grouped output by 'Metric', 'Party', 'Year'. You can override
+using the `.groups` argument.
