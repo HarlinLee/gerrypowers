@@ -63,7 +63,10 @@ This code relies heavily on consistent naming of the chain files.
        
   7. Read results from multiple trajectories and perform hypothesis test
      - `read_hp_results.sh` runs `read_hp_results.py`.
-     - Read the trajectories saved from the earlier step and save results in `{fn}_{ep}_{alpha}.csv`. Aggregate these csv files (code not provided) to get `df_power_total.csv` in the power analysis section.
+     - Read the trajectories saved from the earlier step and save results in `{fn}_{ep}_{alpha}.csv`. Aggregate these csv files with `scripts/aggregate_power.py` to get `df_power_total.csv` in the power analysis section.
+
+  9. Re-run all tests of the paper on a Slurm cluster and summarize them
+     - See `jobs/README.md`.
 
 ## Common parameters
 | Parameter             | Explanation | Examples |
