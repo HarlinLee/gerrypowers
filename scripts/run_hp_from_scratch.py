@@ -11,7 +11,7 @@ import utils
 """
 Run it like this:
 
-python -u ./run_hp_from_scratch.py --k 200000 --m 32 --map random --fn unbiased_chains/NC/unbiased_PRES16_50000.pkl --proposal random
+PYTHONHASHSEED=0 python -u ./run_hp_from_scratch.py --k 200000 --m 32 --map random --fn unbiased_chains/NC/unbiased_PRES16_50000.pkl --proposal reversible --seed 1
 """
 
 def fast_reversible_propose(partition):
@@ -312,7 +312,8 @@ if __name__ == "__main__":
     parser.add_argument("--a", type=float, default=0.009, help="alpha")
     parser.add_argument("--e", type=float, default=0.003, help="epsilon")
     parser.add_argument("--fn", type=str, default='biased_chains/PA/shortburst_PRES12_Republican_mean_median_10000_1695552174.pkl', help="path to biased chain file")
-    parser.add_argument("--proposal", type=str, default="random", help="random, reversible, recom, chunk")
+    parser.add_argument("--proposal", type=str, default="reversible",
+        help="reversible (the flip chain of Theorem 3.1), random (not reversible, kept to reproduce the original results), recom, chunk")
     parser.add_argument("--seed", type=int, default=None, help="random seed")
     parser.add_argument("--save_percents", type=int, default=1,
         help="1 to save the sorted vote shares of every step, 0 to skip them")
