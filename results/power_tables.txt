@@ -1,0 +1,23 @@
+ensembles whose late maps have a larger mean label than their early maps: 20 of 20
+
+== all: 20 ensembles, 100-100 tested maps each ==
+Metric efficiency_gap  mean 0.7050  se 0.0215  sd 0.174  (4 ensembles)
+Metric mean_median     mean 0.6475  se 0.0236  sd 0.090  (4 ensembles)
+Metric partisan_bias   mean 0.0025  se 0.0025  sd 0.005  (4 ensembles)
+Metric partisan_gini   mean 0.9800  se 0.0070  sd 0.016  (4 ensembles)
+Metric safe_seats      mean 0.1050  se 0.0123  sd 0.210  (4 ensembles)
+Year   12              mean 0.4970  se 0.0108  sd 0.385  (10 ensembles)
+Year   16              mean 0.4790  se 0.0089  sd 0.434  (10 ensembles)
+Party  Democratic      mean 0.5110  se 0.0105  sd 0.393  (10 ensembles)
+Party  Republican      mean 0.4650  se 0.0092  sd 0.426  (10 ensembles)
+
+== second half: 20 ensembles, 43-63 tested maps each ==
+Metric efficiency_gap  mean 0.8037  se 0.0277  sd 0.132  (4 ensembles)
+Metric mean_median     mean 0.6393  se 0.0347  sd 0.033  (4 ensembles)
+Metric partisan_bias   mean 0.0000  se 0.0000  sd 0.000  (4 ensembles)
+Metric partisan_gini   mean 0.9794  se 0.0102  sd 0.017  (4 ensembles)
+Metric safe_seats      mean 0.1570  se 0.0184  sd 0.314  (4 ensembles)
+Year   12              mean 0.5348  se 0.0155  sd 0.392  (10 ensembles)
+Year   16              mean 0.4970  se 0.0121  sd 0.446  (10 ensembles)
+Party  Democratic      mean 0.5599  se 0.0141  sd 0.411  (10 ensembles)
+Party  Republican      mean 0.4718  se 0.0137  sd 0.424  (10 ensembles)
