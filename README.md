@@ -25,6 +25,8 @@ If you find this code useful, please cite our paper: https://arxiv.org/abs/2501.
 # Power analysis
 The R script `power_analysis.R` analyzes the summary file `df_power_total.csv` and produces figures in `plots/power_analysis`.
 
+`df_power_total.csv` holds the results of the corrected outlier test, which keeps every district connected and uses a reversible flip chain. The results of the original test are in `df_power_total_original.csv`, and the per-test results are in `results/` (see `results/README.md`).
+
 # Generating biased ensembles
 ## Software
 
