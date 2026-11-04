@@ -85,11 +85,18 @@ Shows up in `run_hp_from_scratch.py` and `read_hp_results.py`.
 | `a` | Alpha for hypothesis test | 0.05 |
 | `m` | Number of trajectories | 32 |
 | `k` | Number of steps in MCMC chain | 100000 |
-| `proposal` | MCMC chain generation method | recom (reversible), random (flipnode), chunk (chunk flip) [^4]|
+| `proposal` | MCMC chain generation method | reversible (default, flip node with a uniformly random boundary node and neighbouring district, reversible as Theorem 3.1 requires), random (flip across a random cut edge, not reversible, kept to reproduce earlier results), recom, chunk (chunk flip) [^4]|
 | `map` | Which maps to investigate | random (randomly select from chain), max (map with max value), min |
+| `map_idx` | Index of the map to investigate, overrides `map` | 2481 |
 | `fn` | File name | See below |
+| `plans` | Pickle of `{map index: assignment}` to read the starting map from instead of `fn` (needs `map_idx`) | `start_plans/unbiased_PRES16_50000.pkl` |
+| `seed` | Seed for Python's `random` and numpy. Also set `PYTHONHASHSEED=0` to make runs identical | 100001 |
+| `summary` | json file for a small summary of the test's outcomes | `summaries/task_1.json` |
+| `save_percents` | 1 to save the sorted vote shares of every step, 0 to skip them | 0 |
 
 #### Notes on `run_hp_from_scratch.py`:
+  - The flip proposals (`reversible` and `random`) run with GerryChain's `single_flip_contiguous` constraint, so every district stays connected along a trajectory. Earlier versions of this script had no contiguity constraint and used `random` by default, so their trajectories almost always contained split districts. Results computed with those versions should be rerun.
+  - GerryChain 0.3.x draws from Python's `random` module and ignores `GERRYCHAIN_RANDOM_SEED`, so pass `--seed` and set `PYTHONHASHSEED=0` for reproducible runs.
   - Where do we control parameter 100, i.e. how many maps to sample from a given chain? In the header of `run_hp_from_scratch.sh`, there's a slurm parameter `#SBATCH --array=1-100%50`. This means run 100 of the same script in parallel but no more than 50 at a time[^5].
 - `fn` should be the path to where the (un)biased chain is. For example, `biased_chains/NC/shortburst_PRES16_Republican_partisan_gini_10000_1719440281.pkl` or `unbiased_chains/NC/unbiased_PRES16_50000.pkl`.
   
